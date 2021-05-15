@@ -1,4 +1,3 @@
-import './App.css';
 import CaughtPokemon from './CaughtPokemon';
 import HelloWorld from "./HelloWorld";
 import Logo from "./Logo";
