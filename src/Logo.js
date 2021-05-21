@@ -4,6 +4,7 @@ const logWhenClicked = () => (
   console.log("You clicked the logo")
 )
 
+
 //  Traditional Function declaration.
 const Logo = (props) => {
   console.log("Logo:", props)
