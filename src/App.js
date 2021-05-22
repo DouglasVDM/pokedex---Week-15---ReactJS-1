@@ -3,11 +3,12 @@ import HelloWorld from "./HelloWorld";
 import Logo from "./Logo";
 import BestPokemon from "./BestPokemon";
 
-const logWhenClicked = () => (
-  console.log("You clicked the logo")
-)
+
 
 function App() {
+  const logWhenClicked = () => (
+    console.log("You clicked the logo.")
+  )
   return (
     <div >
       <Logo handleClick={logWhenClicked} appName="Pokedex"/>
