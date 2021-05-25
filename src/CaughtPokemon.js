@@ -4,8 +4,12 @@ function CaughtPokemon(props) {
   
   const initialState = [];
   const [caught, setCaught] = useState(initialState)
+
+  let listOfPokemons = ["Pikachu", "Charizard", "Landorus", "Eevee", "Snorlax", "MewTwo", "Charmander", "Ditto", "Squirtle", "Lucario", "Gardevior", "Gengar", "Bulbasaur"];
+
+  const randomPokemon = listOfPokemons[Math.floor(Math.random() * listOfPokemons.length)];
   
-  const catchPokemon = () => setCaught(caught.concat(12345))
+  const catchPokemon = () => setCaught(caught.concat(randomPokemon))
 
   return (
     <div>
@@ -13,7 +17,6 @@ function CaughtPokemon(props) {
       <ul>
         {
           caught.map((pokemon,index) => {
-            console.log(pokemon)
             return (
               <li key={index}>{pokemon}</li>
             )
