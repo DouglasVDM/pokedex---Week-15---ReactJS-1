@@ -1,26 +1,23 @@
 import React, {useEffect, useState} from "react";
 
-function PokemonMoves() {
+function PokemonMoves({pokemonId}) {
 
   const [pokemonData, setPokemonData] = useState(null);
-
-  useEffect(()=>{},[])
-
+  
   useEffect(() => {
 
-    fetch("https://pokeapi.co/api/v2/pokemon/1/")
+    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}/`)
       .then(response => response.json())
       .then(
         data => {
           console.log("before:", data);
           setPokemonData(data);
           console.log("After:", data);
-        })
+        })    
       
-  }, [])
-    
-    if (pokemonData) {
-      return (
+  }, [pokemonId])
+    return (
+    pokemonData) ? (
         <div>
           <p>{pokemonData.name}'s moves:</p>
           <ul>
@@ -28,11 +25,8 @@ function PokemonMoves() {
               return <li key={index}>{move.move.name}</li>;
             })}
           </ul>
-        </div>
-      );
-    } else {
-      return null;
-    }  
+        </div>) : null
+      
 }
 
 export default PokemonMoves;
