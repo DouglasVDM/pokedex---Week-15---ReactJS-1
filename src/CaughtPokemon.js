@@ -34,7 +34,7 @@ function CaughtPokemon(props) {
         value={pokemonNameInput}
         onChange={handleInputChange}
       />
-      <button type="reset" onClick={catchPokemon}>Catch Pokemon</button>
+      <button disabled={!pokemonNameInput} type="reset" onClick={catchPokemon}>Catch Pokemon</button>
     </div>    
   )
 }
